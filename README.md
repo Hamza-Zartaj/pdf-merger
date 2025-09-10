@@ -13,13 +13,6 @@ A simple and user-friendly desktop application for merging multiple PDF files in
 - **Custom Output**: Choose where to save your merged PDF
 - **Error Handling**: User-friendly error messages and validation
 
-## Screenshots
-
-The application provides a clean interface with:
-- File list display showing selected PDF files
-- Add/Remove buttons for file management
-- Move Up/Down buttons for reordering
-- Merge button to create the final PDF
 
 ## Installation
 
@@ -41,28 +34,6 @@ The application provides a clean interface with:
    python pdf_merger.py
    ```
 
-### Option 2: Use Pre-built Executable
-
-If available, you can download the standalone executable from the releases section and run it directly without installing Python.
-
-## Usage
-
-1. **Launch the application**
-   - Run `python pdf_merger.py` or use the executable
-
-2. **Add PDF files**
-   - Click "Add PDFs" button
-   - Select one or more PDF files from the file dialog
-
-3. **Arrange files (optional)**
-   - Select a file in the list
-   - Use "Move Up" or "Move Down" to reorder
-   - Use "Remove Selected" to remove unwanted files
-
-4. **Merge PDFs**
-   - Click "Merge PDFs" button
-   - Choose the output location and filename
-   - The merged PDF will be saved to your specified location
 
 ## Dependencies
 
@@ -80,7 +51,7 @@ To create a standalone executable:
 
 2. Build the executable:
    ```bash
-   pyinstaller pdf_merger.spec
+   pyinstaller --onefile --windowed --icon=icon.ico --add-data "icon.ico;." --name "PDF_Merger_Tool" pdf_merger.py
    ```
 
 The executable will be created in the `dist` folder.
