@@ -18,6 +18,7 @@ class PDFMergerApp:
         tk.Button(root, text="Move Up", command=self.move_up).pack(pady=2)
         tk.Button(root, text="Move Down", command=self.move_down).pack(pady=2)
         tk.Button(root, text="Merge PDFs", command=self.merge_pdfs, bg="green", fg="white").pack(pady=15)
+        tk.Button(root, text="About", command=self.show_about, bg="lightblue").pack(pady=5)
 
         self.pdf_files = []
 
@@ -69,6 +70,24 @@ class PDFMergerApp:
             merger.write(save_path)
             merger.close()
             messagebox.showinfo("Success", f"Merged PDF saved as:\n{save_path}")
+
+    def show_about(self):
+        about_text = """PDF Merger Tool v1.0
+
+Created by: Hamza Zartaj
+GitHub: @Hamza-Zartaj
+
+A simple and user-friendly tool for merging PDF files.
+
+Features:
+• Add multiple PDF files
+• Reorder files before merging
+• Choose custom output location
+• Clean and intuitive interface
+
+Developed with ❤️ for efficient PDF management"""
+        
+        messagebox.showinfo("About PDF Merger", about_text)
 
 # Run the app
 if __name__ == "__main__":
